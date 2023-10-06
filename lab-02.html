@@ -382,6 +382,10 @@ plastic_data_all %&gt;% head(n = 10)</code></pre>
 ##  9 Bangladesh          BGD                6.27 
 ## 10 Barbados            BRB                3.04</code></pre>
 <pre class="r"><code># Member 2 write code to load File 2 data here:
+data2 &lt;- read_csv2(&quot;data/per-capita-ocean-plastic-waste.txt&quot;)
+plastic_data_all &lt;- data2 %&gt;%
+  select(-name) %&gt;%
+  left_join(plastic_data_all, by = &quot;code&quot;)
 
 
 
